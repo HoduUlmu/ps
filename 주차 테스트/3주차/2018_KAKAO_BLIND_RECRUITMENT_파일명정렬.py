@@ -8,8 +8,7 @@ def solution(files):
 
 def compare(f1: str, f2: str):
     f1, f2 = f1.lower(), f2.lower()
-    f1_head = get_head(f1)
-    f2_head = get_head(f2)
+    f1_head, f2_head = get_head(f1), get_head(f2)
     if f1_head[0] > f2_head[0]:
         return 1
     elif f1_head[0] < f2_head[0]:
