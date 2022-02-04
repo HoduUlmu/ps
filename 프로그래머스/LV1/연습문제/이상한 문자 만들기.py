@@ -1,4 +1,14 @@
-def solution(s):
-    for words in s:
+def solution(s: str):
+    ans = []
+    for words in s.split():
+        for idx, char in enumerate(words):
+            if idx == 0 or idx % 2 == 0:
+                ans.append(char.upper())
+            else:
+                ans.append(char.lower())
+        ans.append(" ")
 
-    return answer
+    return
+
+
+solution("try hello")
