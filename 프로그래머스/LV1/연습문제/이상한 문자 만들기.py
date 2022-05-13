@@ -1,14 +1,17 @@
 def solution(s: str):
-    ans = []
-    for words in s.split():
-        for idx, char in enumerate(words):
-            if idx == 0 or idx % 2 == 0:
-                ans.append(char.upper())
-            else:
-                ans.append(char.lower())
-        ans.append(" ")
+    idx, ans = 0, []
+    for char in s:
+        if char.isspace():
+            ans.append(char)
+            idx = 0
+        else:
+            ans.append(char.upper() if not idx % 2 else char.lower())
+            idx += 1
+    return ''.join(ans)
 
-    return
 
+print(solution("try hello"))
+print(0 % 2 == 0)
 
-solution("try hello")
+# def toWeirdCase(s):
+#     return " ".join(map(lambda x: "".join([a.lower() if i % 2 else a.upper() for i, a in enumerate(x)]), s.split(" ")))

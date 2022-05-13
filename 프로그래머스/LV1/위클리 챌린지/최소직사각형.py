@@ -1,0 +1,11 @@
+def solution(sizes):
+    sizes = [sorted(x, reverse=True) for x in sizes]
+    return max(sizes, key=lambda x: x[0])[0] * max(sizes, key=lambda x: x[1])[1]
+
+
+print(solution([[60, 50], [30, 70], [60, 30], [80, 40]]))
+print(solution([[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]))
+print(solution([[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]))
+
+# def solution(sizes):
+#     return max(max(x) for x in sizes) * max(min(x) for x in sizes)

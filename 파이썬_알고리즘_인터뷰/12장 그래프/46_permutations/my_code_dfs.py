@@ -1,7 +1,7 @@
 from copy import deepcopy
 from typing import List
 
-# deepcopy 쓰는 부분이 마음에 들지 않음
+
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         ans = []
@@ -11,7 +11,8 @@ class Solution:
         def recursive(cand: List[int]):
             # 순열 하나 완성 -> 리턴
             if len(cand) == len(nums):
-                ans.append(deepcopy(cand))
+                ans.append(cand[:])
+                # ans.append(deepcopy(cand))
                 return
 
             for i in nums:
